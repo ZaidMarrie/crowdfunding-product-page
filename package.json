@@ -1,0 +1,24 @@
+{
+  "name": "crowdfunding-product-page",
+  "version": "1.0.0",
+  "description": "A frontend mentor challenge to practice frontend skills",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "'echo testing'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZaidMarrie/crowdfunding-product-page.git"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Zaid Marrie <zaidmarrie27@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZaidMarrie/crowdfunding-product-page/issues"
+  },
+  "homepage": "https://github.com/ZaidMarrie/crowdfunding-product-page#readme"
+}
