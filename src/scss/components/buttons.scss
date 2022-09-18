@@ -1,0 +1,42 @@
+@use "../utils/" as *;
+
+.btn {
+	font-weight: 500;
+	color: var(--clr-neutral-100);
+	padding: 1rem 3rem;
+	border-radius: 3em;
+	background-color: var(--clr-accent);
+	position: relative;
+
+	&--bookmark {
+		--gap: 1rem;
+		padding: 0;
+		background-color: var(--clr-neutral-500);
+		align-items: center;
+
+		.icon {
+			width: rem(55);
+			aspect-ratio: 1;
+			border-radius: 50%;
+			background-color: hsl(0 0% 20%);
+		}
+
+		.text {
+			padding-right: 1.5rem;
+			display: none;
+
+			@include breakpoint(large) {
+				display: inline-block;
+			}
+		}
+	}
+
+	&--product {
+		padding: 0.875rem 2.25rem;
+	}
+
+	&--disabled {
+		cursor: not-allowed;
+		background-color: var(--clr-neutral-500);
+	}
+}

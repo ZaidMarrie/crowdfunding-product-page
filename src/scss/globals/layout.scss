@@ -1,24 +1,13 @@
 .container {
-	width: 80%;
-	margin: 0 auto;
-
-	// @include breakpoint(large) {
-	// 	transform: translate(0, 0);
-	// }
+	width: min(100% - 1.5rem, 45rem);
+	margin: -55px auto 0;
 }
 
 .flex {
+	gap: var(--gap, 1.5rem);
 	display: flex;
 
-	&__jc-sb {
-		justify-content: space-between;
-	}
-
-	&__jc-c {
-		justify-content: center;
-	}
-
-	&__ai-c {
-		align-items: center;
+	&--column {
+		flex-direction: column;
 	}
 }

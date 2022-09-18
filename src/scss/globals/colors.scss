@@ -1,7 +1,9 @@
 :root {
-    --accent: 176, 50%, 47%;
-    --accent-dark: 176, 72%, 28%;
+	--clr-accent: hsl(176 50% 47%);
+	--clr-accent-dark: hsl(176 72% 28%);
 
-    --clr-900: 0, 0%, 0%;
-    --clr-500: 0, 0%, 48%;
+	--clr-neutral-100: hsl(0 0% 100%);
+	--clr-neutral-200: hsl(0 0% 98%);
+	--clr-neutral-500: hsl(0 0% 48%);
+	--clr-neutral-900: hsl(0 100% 0%);
 }

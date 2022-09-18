@@ -1,0 +1,52 @@
+@use "../utils/" as *;
+
+.card {
+	padding: rem(50) 2rem rem(40);
+	border-radius: rem(10);
+	background-color: var(--clr-neutral-100);
+
+	& p {
+		margin-top: 1rem;
+	}
+
+	&__header {
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__title {
+		font-size: 1.375rem;
+	}
+
+	&__footer {
+		--gap: 0;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: rem(25);
+	}
+
+	&--product {
+		padding: 1.5rem;
+		border: 1px solid var(--clr-neutral-500);
+
+		& .card__header,
+		& .card__footer {
+			flex-direction: column;
+			align-items: flex-start;
+
+			@include breakpoint(large) {
+				flex-direction: row;
+				align-items: center;
+			}
+		}
+
+		& .stock {
+			--gap: 0.625rem;
+			align-items: center;
+		}
+
+		&:last-child {
+			opacity: 0.65;
+		}
+	}
+}

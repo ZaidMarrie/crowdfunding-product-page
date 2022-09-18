@@ -1,0 +1,68 @@
+@use "../utils/" as *;
+
+.nav {
+	color: var(--clr-neutral-100);
+	width: min(100% - 3rem, 69rem);
+	margin-inline: auto;
+	padding-block: 2rem;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+
+	&__list {
+		--gap: 0;
+		color: var(--clr-neutral-900);
+		list-style: none;
+		width: 100%;
+		border-radius: rem(10);
+		background-color: var(--clr-neutral-100);
+		box-shadow: 0 1px 5px hsl(0 0% 0% / 0.15);
+		flex-direction: column;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 5;
+		transform: translateY(-300%);
+		transition: transform 300ms ease-in-out;
+
+		&-item {
+			font-weight: 500;
+			padding: 1.5rem;
+
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--clr-neutral-200);
+			}
+		}
+
+		@include breakpoint(large) {
+			--gap: 1.5rem;
+			color: var(--clr-neutral-100);
+			width: auto;
+			border-radius: none;
+			background-color: transparent;
+			box-shadow: none;
+			flex-direction: row;
+			position: static;
+			transform: translateY(0);
+
+			&-item {
+				font-weight: 400;
+				padding: 0;
+
+				&:not(:last-child) {
+					border: none;
+				}
+			}
+		}
+	}
+
+	&__toggle[aria-expanded="true"] ~ .nav__list {
+		transform: translateY(0);
+	}
+
+	@include breakpoint(large) {
+		&__toggle {
+			display: none;
+		}
+	}
+}

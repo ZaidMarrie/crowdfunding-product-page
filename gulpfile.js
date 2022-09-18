@@ -25,7 +25,7 @@ function jsTask() {
 
 // Copy Assets
 function copyAssets() {
-	return src("src/assets/**/*.{png, jpg, svg}").pipe(dest("dist"));
+	return src("src/assets/**/*").pipe(dest("dist"));
 }
 
 // BrowserSync Tasks
@@ -51,6 +51,7 @@ function browserSyncReload(cb) {
 // Watch Task
 function watchTask() {
 	watch("**/*.html", browserSyncReload);
+	watch("src/assets/**/*", series(copyAssets, browserSyncReload));
 	watch(["src/scss/**/*.scss", "src/js/**/*.js"], series(scssTask, jsTask, browserSyncReload));
 }
 
