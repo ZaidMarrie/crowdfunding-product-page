@@ -1,0 +1,94 @@
+@use "../utils/" as *;
+
+.modal {
+	width: 100%;
+	height: 100%;
+	padding: 2rem;
+	background-color: hsl(0 0% 0% / 0.35);
+	position: fixed;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	overflow: auto;
+	opacity: 0;
+	transform: translateY(-100%);
+
+	&[aria-expanded="true"] {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	&__content {
+		width: 100%;
+		max-width: 45rem;
+		padding: 2.5rem 1.5rem;
+		border-radius: rem(10);
+		background-color: var(--clr-neutral-100);
+		position: relative;
+	}
+
+	&__close-btn {
+		background-color: transparent;
+		position: absolute;
+		top: 1.5rem;
+		right: 1.5rem;
+	}
+
+	& .pledge-input {
+		cursor: pointer;
+		font-weight: 500;
+		padding: 0.75rem 1.35rem;
+		border-radius: 3em;
+		border: 1px solid var(--clr-neutral-500);
+
+		&__currency {
+			margin-right: 0.25rem;
+		}
+
+		&__amount:focus {
+			outline: none;
+		}
+
+		&:hover,
+		&:focus {
+			border-color: var(--clr-accent);
+		}
+	}
+
+	&--success {
+		text-align: center;
+
+		& .modal__content {
+			max-width: 35rem;
+		}
+
+		& .modal__title {
+			margin-top: 2rem;
+		}
+	}
+
+	&__icon {
+		margin-inline: auto;
+	}
+
+	&__close-btn--success {
+		font-weight: 500;
+		color: var(--clr-neutral-100);
+		padding: 1rem 3rem;
+		border-radius: 3em;
+		background-color: var(--clr-accent);
+
+		&:hover,
+		&:focus {
+			background-color: var(--clr-accent-dark);
+		}
+	}
+
+	@include breakpoint(large) {
+		.stock {
+			position: absolute;
+			top: 0.875rem;
+			right: 1.5rem;
+		}
+	}
+}
